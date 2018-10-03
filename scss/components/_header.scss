@@ -1,10 +1,22 @@
 header {
-  margin-top: 25%;
-  font-family: 'Fahkwang', sans-serif;
+  padding-top: 10%;
 }
 
-h1 {
-  text-align: center;
+.header-cont {
+  // margin: 10% auto 0;
+  padding: 2em;
   color: white;
-  font-size: 5em;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.45);
+  border-top: 5px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 5px solid rgba(0, 0, 0, 0.5);
+  & h1 {
+    font-family: 'Fahkwang', sans-serif;
+    font-size: 5em;
+    margin: 0;
+  }
+  & p {
+    font-size: 2em;
+    margin: 0;
+  }
 }
