@@ -3,13 +3,12 @@ header {
 }
 
 .header-cont {
-  // margin: 10% auto 0;
   padding: 2em;
-  color: white;
+  color: $color-font-secondary;
   text-align: center;
-  background: rgba(0, 0, 0, 0.45);
-  border-top: 5px solid rgba(0, 0, 0, 0.5);
-  border-bottom: 5px solid rgba(0, 0, 0, 0.5);
+  background: $color-background-primary;
+  border-top: 5px solid $color-background-tertiary;
+  border-bottom: 5px solid $color-background-tertiary;
   & h1 {
     font-family: 'Fahkwang', sans-serif;
     font-size: 5em;

@@ -4,9 +4,9 @@
   width: 100vw;
   top: inherit;
   margin-top: 1em;
-  background: rgba(0, 0, 0, .45);
+  background: $color-background-primary;
   font-size: 2em;
-  color: white;
+  color: $color-font-secondary;
   z-index: 75;
   & ul {
     display: flex;
@@ -15,8 +15,8 @@
     & li {
       padding: 0.5em;
       &:hover{
-        color: #6092ca;
-        background: rgba(0, 0, 0, 0.65);
+        color: $color-font-tertiary;
+        background: $color-background-tertiary;
         border-radius: 5px;
       }
     }
