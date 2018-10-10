@@ -1,23 +1,49 @@
-%backdrop {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
+%section {
+  // display: none;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
   width: 100vw;
-  height: 100vh;
-  z-index: 25;
-  & .backdrop {
-    background: $color-background-four;
-    width: 80vw;
-    height: calc(80vh - 50px - 3em);
-    margin: calc(10vh + 68.5px) 10vw 0;
-    border-radius: 10px;
+  // height: 100vh;
+  // z-index: 25;
+  & .container {
+    width: 60%;
+    // height: 85vh;
+    margin: auto;
+    // width: 60vw;
+    // height: calc(80vh - 3.5em);
+    // margin: calc(10vh + 68.5px) 20vw 0;
+    // border-radius: 10px;
     & h1 {
-      padding: 0.5em 0;
-      text-align: center;
+      // padding: calc(68px + 0.5em) 0;
+      // text-align: center;
       color: $color-font-secondary;
-      background: $color-background-primary;
-      border-bottom: 5px solid $color-background-tertiary;
+      // background: $color-background-primary;
+      // border-bottom: 5px solid $color-background-tertiary;
     }
   }
+}
+
+%padding {
+  & .container {
+    padding-top: 15vh;
+  }
+}
+
+%sectionGrid {
+  & .container {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    grid-gap: 2em;
+  }
+}
+%form-format {
+  width: 96%;
+  border: 2px solid $color-background-four;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+%pagBackground {
+  background: $color-background-four;
 }

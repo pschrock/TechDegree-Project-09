@@ -3,9 +3,15 @@
 // font-family: 'Muli', sans-serif;
 // font-family: 'Fahkwang', sans-serif;
 // font-family: 'Maven Pro', sans-serif;
+* {
+  box-sizing: border-box;
+}
 
+html,
 body {
   font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -18,18 +24,6 @@ ul {
   padding: 0;
 }
 
-.wrap {
+main {
   position: relative;
-}
-
-.overlay {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: black;
-  opacity: 0;
-  z-index: 100;
 }

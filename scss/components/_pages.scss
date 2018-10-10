@@ -1,17 +1,47 @@
+// .top-spacer{
+//   height: 15vh;
+// }
+//
+// .bottom-spacer {
+//   height: 40vh;
+// }
+
+.home {
+  @extend %section;
+  height: 100vh;
+}
+
 .about {
-  @extend %backdrop;
+  @extend %section;
+  @extend %pagBackground;
+  @extend %padding;
+  @extend %sectionGrid;
   & h1 {
-    margin-bottom: 0.5em;
+    margin: 0.5em 0;
+    text-align: center;
   }
-  & img {
-    width: 20%;
-    border-radius: 50%;
-    border: 5px solid $color-background-tertiary;
+  & h3,
+  p,
+  ul,
+  blockquote {
+    font-size: 2em;
+  }
+  & ul,
+  p {
+    color: $color-font-tertiary;
+  }
+  & h3,
+  blockquote,
+  cite {
+    color: $color-font-secondary;
   }
 }
 
 .portfolio {
-  @extend %backdrop;
+  @extend %section;
+  @extend %pagBackground;
+  @extend %padding;
+  @extend %sectionGrid;
   & h1 {
     margin-bottom: 0.5em;
   }
@@ -29,27 +59,60 @@
 }
 
 .contact {
-  @extend %backdrop;
+  @extend %section;
+  @extend %pagBackground;
+  height: 100vh;
+  & h1 {
+    padding: calc(68px + 0.5em) 0;
+    text-align: center;
+  }
+  &>.container>div>p {
+    color: $color-font-secondary;
+    text-align: center;
+    margin-top: 3em;
+  }
   & .contact-wrap {
+    max-height: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
   & form {
-    padding: 1em;
+    display: grid;
+    grid-template-rows: 1fr 1fr 3fr;
+    padding: 2em;
+    max-height: 100%;
+  }
+  & .message-wrap {
+    padding-bottom: 2em;
+  }
+  & label {
+    margin-top: 1em;
+    padding: 0;
+    color: $color-font-secondary;
+  }
+  & input {
+    @extend %form-format;
+  }
+  & textarea {
+    @extend %form-format;
+    height: 100%;
   }
   & .social {
-    margin-top: 25%;
-    padding: 1em;
+    padding: 2em;
     & ul {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+      display: grid;
+      grid-template-rows: auto;
+      grid-gap: 1em;
       & li {
-        max-width: 15%;
-        max-height: 15%;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        & p {
+          color: $color-font-secondary;
+        }
         & img{
-          max-width: 100%;
-          max-height: 100%;
+          display: block;
+          margin-left: auto;
+          height: 4em;
         }
       }
     }
