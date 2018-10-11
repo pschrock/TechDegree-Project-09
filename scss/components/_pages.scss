@@ -11,7 +11,8 @@
   height: 100vh;
 }
 
-.about {
+.about,
+.portfolio {
   @extend %section;
   @extend %pagBackground;
   @extend %padding;
@@ -37,25 +38,18 @@
   }
 }
 
-.portfolio {
-  @extend %section;
-  @extend %pagBackground;
-  @extend %padding;
-  @extend %sectionGrid;
-  & h1 {
-    margin-bottom: 0.5em;
-  }
-  & ul {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 1em;
-      padding: 1em;
-      height: calc(100% - 6em);
-      & li:hover {
-        background: $color-background-tertiary;
-        border-radius: 10px;
-      }
-    }
+.portfolio li {
+  padding: 1em 10%;
+}
+
+.card p {
+  font-size: .65em;
+  text-align: center;
+}
+
+.portfolio li:hover {
+  background: $color-background-tertiary;
+  border-radius: 10px;
 }
 
 .contact {

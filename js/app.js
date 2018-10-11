@@ -46,6 +46,7 @@ const quotes = [
 
 const controller = new ScrollMagic.Controller();
 
+// ScrollMagic - Navbar
 const shrinkNavbar = new TweenMax.to('.navbar ul', .5, {padding: 0});
 const scene1 = new ScrollMagic.Scene({
   triggerElement: ".navbar", // point of execution
@@ -58,17 +59,18 @@ const scene1 = new ScrollMagic.Scene({
 // .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
 .addTo(controller);
 
-const bounceImg = new TweenMax.from('.about .about-wrap-left', 1, {scale: 0.25, opacity: 0, ease:Bounce.easeOut});
+//ScrollMagic - About Heading Pinned
+const bounceAboutImg = new TweenMax.from('.about .about-wrap-left', 1, {scale: 0.25, opacity: 0, ease:Bounce.easeOut});
 const scene2 = new ScrollMagic.Scene({
   triggerElement: '.about'
 })
-.setTween(bounceImg)
+.setTween(bounceAboutImg)
 // .addIndicators({name: "1 (duration: 0)"})
 .addTo(controller);
 
 const scene3 = new ScrollMagic.Scene({
   triggerElement: ".about-wrap-left", // point of execution
-  duration: $('.about .about-wrap-right').height() - 460, // pin element for the 'main' height
+  duration: $('.about .about-wrap-right').height() - 400, // pin element for the 'main' height
   triggerHook: 0.15, // don't trigger until #pinned-trigger1 hits the top of the viewport
   reverse: true // allows the effect to trigger when scrolled in the reverse direction
 })
@@ -76,7 +78,26 @@ const scene3 = new ScrollMagic.Scene({
 // .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
 .addTo(controller);
 
-// Scroll to
+//ScrollMagic - About Heading Pinned
+const bouncePrtfolioImg = new TweenMax.from('.portfolio .port-wrap-left', 1, {scale: 0.25, opacity: 0, ease:Bounce.easeOut});
+const scene4 = new ScrollMagic.Scene({
+  triggerElement: '.portfolio'
+})
+.setTween(bouncePrtfolioImg)
+// .addIndicators({name: "1 (duration: 0)"})
+.addTo(controller);
+
+const scene5 = new ScrollMagic.Scene({
+  triggerElement: ".port-wrap-left", // point of execution
+  duration: $('.portfolio .port-wrap-right').height() - 400, // pin element for the 'main' height
+  triggerHook: 0.15, // don't trigger until #pinned-trigger1 hits the top of the viewport
+  reverse: true // allows the effect to trigger when scrolled in the reverse direction
+})
+.setPin('.port-wrap-left')
+// .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+.addTo(controller);
+
+// ScrollMagic - Navigation to Pages
 $('.navbar li').click(function(e) {
   const currentSelected = '.' + $(e.target).html().toLowerCase();
 
