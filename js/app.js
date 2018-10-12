@@ -47,7 +47,7 @@ const quotes = [
 const controller = new ScrollMagic.Controller();
 
 // ScrollMagic - Navbar
-const shrinkNavbar = new TweenMax.to('.navbar ul', .5, {padding: 0});
+const shrinkNavbar = new TweenMax.to('.navbar ul', .5, {padding: 0, background: '#263a50'});
 const scene1 = new ScrollMagic.Scene({
   triggerElement: ".navbar", // point of execution
   duration: $('.main').height(), // pin element for the 'main' height
@@ -56,7 +56,6 @@ const scene1 = new ScrollMagic.Scene({
 })
 .setPin('.navbar')
 .setTween(shrinkNavbar)
-// .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
 .addTo(controller);
 
 //ScrollMagic - About Heading Pinned
@@ -65,7 +64,6 @@ const scene2 = new ScrollMagic.Scene({
   triggerElement: '.about'
 })
 .setTween(bounceAboutImg)
-// .addIndicators({name: "1 (duration: 0)"})
 .addTo(controller);
 
 const scene3 = new ScrollMagic.Scene({
@@ -75,7 +73,6 @@ const scene3 = new ScrollMagic.Scene({
   reverse: true // allows the effect to trigger when scrolled in the reverse direction
 })
 .setPin('.about-wrap-left')
-// .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
 .addTo(controller);
 
 //ScrollMagic - About Heading Pinned
@@ -84,9 +81,9 @@ const scene4 = new ScrollMagic.Scene({
   triggerElement: '.portfolio'
 })
 .setTween(bouncePrtfolioImg)
-// .addIndicators({name: "1 (duration: 0)"})
 .addTo(controller);
 
+//ScrollMagic - Portfolio Heading Pinned
 const scene5 = new ScrollMagic.Scene({
   triggerElement: ".port-wrap-left", // point of execution
   duration: $('.portfolio .port-wrap-right').height() - 400, // pin element for the 'main' height
@@ -101,22 +98,49 @@ const scene5 = new ScrollMagic.Scene({
 $('.navbar li').click(function(e) {
   const currentSelected = '.' + $(e.target).html().toLowerCase();
 
-  TweenMax.to(window, 1, {
-    scrollTo:{
-      y:currentSelected,
-      offsetY:0},
-    ease:Power2.easeOut
-  });
+  if(currentSelected == '.home') {
+    TweenMax.to(window, 1, {
+      scrollTo:{
+        y:currentSelected,
+        offsetY: 225},
+      ease:Power2.easeOut
+    });
+  } else {
+    TweenMax.to(window, 1, {
+      scrollTo:{
+        y:currentSelected,
+        offsetY:0},
+      ease:Power2.easeOut
+    });
+  }
 });
+
+const cards = $('div.card');
+for (i = 0; i<cards.length; i += 1){
+  cards[i].addEventListener('mouseover', (e) => {
+    if(e.bubbles) {
+      console.log(cards[i]);
+      const card = new TweenMax.to(cards[i]+'>div>.overlay', 1, {right: 0});
+      const scene6 = new ScrollMagic.Scene({
+        triggerElement: cards[i]+'>div>.overlay'
+      })
+      .setTween(card)
+      .addTo(controller);
+    }
+  });
+}
+// const cards = $('div.card');
+// for (i = 0; i<cards.length; i += 1){
+//   const scaleInView = new TweenMax.to(cards[i], 1, {scale: 1.1, background: 'rgba(0, 0, 0, 0.65)', borderRadius: '10px', ease:Bounce.easeOut});
+//   const scene6 = new ScrollMagic.Scene({
+//     triggerElement: cards[i], // point of execution
+//     duration: $(cards[i]).height(), // pin element for the 'main' height
+//     // triggerHook: 0.15, // don't trigger until #pinned-trigger1 hits the top of the viewport
+//     // reverse: true // allows the effect to trigger when scrolled in the reverse direction
+//   })
+//   .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+//   .addTo(controller);
+// }
 
 
 // scroll Bind to page
-
-// let position = $('.wrap').scrollTop;
-// const about = $('.about').offset();
-// const portfolio = $('.portfolio').offset();
-// const contact = $('.contact').offset();
-// console.log(about);
-// console.log(portfolio);
-// console.log(contact);
-// console.log(position);
