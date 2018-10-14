@@ -91,7 +91,6 @@ const scene5 = new ScrollMagic.Scene({
   reverse: true // allows the effect to trigger when scrolled in the reverse direction
 })
 .setPin('.port-wrap-left')
-// .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
 .addTo(controller);
 
 // ScrollMagic - Navigation to Pages
@@ -119,7 +118,6 @@ const cards = $('div.card');
 for (i = 0; i<cards.length; i += 1){
   cards[i].addEventListener('mouseover', (e) => {
     if(e.bubbles) {
-      console.log(cards[i]);
       const card = new TweenMax.to(cards[i]+'>div>.overlay', 1, {right: 0});
       const scene6 = new ScrollMagic.Scene({
         triggerElement: cards[i]+'>div>.overlay'
@@ -129,18 +127,28 @@ for (i = 0; i<cards.length; i += 1){
     }
   });
 }
-// const cards = $('div.card');
-// for (i = 0; i<cards.length; i += 1){
-//   const scaleInView = new TweenMax.to(cards[i], 1, {scale: 1.1, background: 'rgba(0, 0, 0, 0.65)', borderRadius: '10px', ease:Bounce.easeOut});
-//   const scene6 = new ScrollMagic.Scene({
-//     triggerElement: cards[i], // point of execution
-//     duration: $(cards[i]).height(), // pin element for the 'main' height
-//     // triggerHook: 0.15, // don't trigger until #pinned-trigger1 hits the top of the viewport
-//     // reverse: true // allows the effect to trigger when scrolled in the reverse direction
-//   })
-//   .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
-//   .addTo(controller);
-// }
 
 
 // scroll Bind to page
+
+
+// send Message
+// const sendButton = $('#sendButton');
+// const name = $('#name');
+// const email = $('#email');
+// const message = $('#message');
+
+$('#sendButton').click((e) => {
+  if ($('#name').val() == "") {
+    e.preventDefault();
+    alert("Please input your name.");
+  } else if ($('#email').val() == "") {
+    e.preventDefault();
+    alert("Please input an email to receive a reply.");
+  } else if ($('#message').val() == "") {
+    e.preventDefault();
+    alert("Please input a message you would like to send.");
+  } else {
+    alert("Your message has been sent.");
+  }
+});

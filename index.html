@@ -222,18 +222,20 @@
             <p>If you would like to reach out and contact me, please feel free to send me a message.</p>
           </div>
           <div class="contact-wrap">
-            <form class="contact-form" action="index.html" method="post">
+            <form class="contact-form" action="https://formspree.io/peter@miskit.org"
+      method="POST">
               <div class="name-wrap">
                 <label for="name">Name</label>
-                <input type="text" id="name" placeholder="Required">
+                <input type="text" id="name" name="name" placeholder="Required">
               </div>
               <div class="email-wrap">
                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Required">
+                <input type="email" id="email" name="_replyto" placeholder="Required">
               </div>
               <div class="message-wrap">
                 <label for="message">Message</label>
-                <textarea id="message" placeholder="Required"></textarea>
+                <textarea id="message" name="message" placeholder="Required"></textarea>
+                <input id="sendButton" type="submit" value="Send"></input>
               </div>
             </form>
             <div class="social">
