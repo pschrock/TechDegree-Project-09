@@ -9,7 +9,8 @@
   <body>
     <main class="wrap">
       <!-- <div class="overlay"></div> -->
-      <section class="home">
+      <section class="home panel" data-section-name="home">
+        <div class="topSpacer"></div>
         <header>
           <div class="header-cont">
             <h1>Peter Schrock</h1>
@@ -30,7 +31,7 @@
           </ul>
         </nav>
       </section>
-      <section class="about">
+      <section class="about panel" data-section-name="about">
         <div class="container">
           <div class="about-wrap-left">
             <img class="about-img" src="img/photos/me.jpg" alt="A picture of Peter Schrock at a resturant in Englewood, CO">
@@ -98,7 +99,7 @@
           </div>
         </div>
       </section>
-      <section class="portfolio">
+      <section class="portfolio panel" data-section-name="portfolio">
         <div class="container">
           <div class="port-wrap-left">
             <img class="port-img" src="img/photos/code.png" alt="A snapshot of HTML code">
@@ -215,15 +216,14 @@
           </div>
         </div>
       </section>
-      <section class="contact">
+      <section class="contact panel" data-section-name="contact">
         <div class="container">
           <h1>Contact</h1>
           <div class="">
             <p>If you would like to reach out and contact me, please feel free to send me a message.</p>
           </div>
           <div class="contact-wrap">
-            <form class="contact-form" action="https://formspree.io/peter@miskit.org"
-      method="POST">
+            <form class="contact-form" action="https://formspree.io/peter@miskit.org" method="POST">
               <div class="name-wrap">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="Required">
@@ -273,10 +273,11 @@
             </div>
           </div>
         </div>
+        <footer>
+          <p>&copy; 2018 Created by Peter Schrock</p>
+        </footer>
       </section>
-      <footer>
-        <p>&copy; 2018 Created by Peter Schrock</p>
-      </footer>
+
     </main>
 
 
@@ -287,6 +288,7 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/CSSPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/ScrollToPlugin.min.js"></script>
+    <script src="js/Scrollify-master/jquery.scrollify.js"></script>
     <script src="js/app.js" charset="utf-8"></script>
   </body>
 </html>
