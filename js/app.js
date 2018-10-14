@@ -139,31 +139,6 @@ $(function() {
      touchScroll:true,
   });
 });
-// const body = $('main').getBoundingClientRect();
-// const about = $('.about').getBoundingClientRect();
-// const port = $('.portfolio').getBoundingClientRect();
-// const contact = $('.contact').getBoundingClientRect();
-//
-// console.log(body.top);
-// console.log(about.top);
-// console.log(port.top);
-// console.log(contact.top);
-// $('.about').scrollTop(() => {
-//   // console.log($('.about').scrollTop());
-//   console.log('action');
-// });
-// const options = {
-//     container: document.body.main,
-//     panelSelector: '> section',
-//     directionThreshold: 50,
-//     delay: 0,
-//     duration: 300,
-//     // easing: function(t) { return t },
-//   };
-
-// $("main", function() {
-//   new PanelSnap();
-// });
 
 // send Message - validates fields are not empty
 $('#sendButton').click((e) => {
