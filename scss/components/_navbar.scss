@@ -1,13 +1,16 @@
 .navbar {
   position: absolute;
-  // left: 0;
   width: 100vw;
-  // top: inherit;
   margin-top: 2em;
   background: $color-background-primary;
-  font-size: 2em;
+  font-size: 1em;
   color: $color-font-secondary;
   z-index: 100;
+  @media (min-width: 768px) {
+    left: 0;
+    top: inherit;
+    font-size: 2em;
+  }
   & ul {
     display: flex;
     justify-content: center;

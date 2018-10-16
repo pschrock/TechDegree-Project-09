@@ -1,7 +1,10 @@
 %section {
   width: 100%;
   & .container {
-    width: 60%;
+    width: 80%;
+    @media (min-width: 768px) {
+      width: 60%;
+    }
     margin: auto;
     & h1 {
       color: $color-font-secondary;
@@ -11,19 +14,25 @@
 
 %padding {
   & .container {
-    padding-top: 15vh;
+    padding-top: 5vh;
+    @media (min-width: 768px) {
+      padding-top: 15vh;
+    }
   }
 }
 
 %sectionGrid {
   & .container {
     display: grid;
-    grid-template-columns: 1.5fr 2fr;
-    grid-gap: 2em;
+    grid-template-columns: 1fr;
+    @media (min-width: 768px) {
+      grid-template-columns: 1.5fr 2fr;
+      grid-gap: 2em;
+    }
   }
 }
 %form-format {
-  width: 96%;
+  width: $form-width;
   border: 2px solid $color-background-four;
   border-radius: 5px;
   padding: 5px;
