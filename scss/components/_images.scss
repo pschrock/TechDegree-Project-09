@@ -1,12 +1,14 @@
 body {
-  @media (orientation: portrait) {
+  @media (max-width: 1024px)
+    and (orientation: portrait) {
     background: url("../img/photos/tracks-min-portrait.jpg") no-repeat center center fixed;
   }
-  @media (orientation: landscape) {
+  @media (max-width: 768px)
+    and (orientation: landscape) {
     background: url("../img/photos/tracks-min-landscape.jpg") no-repeat center center fixed;
   }
   background-size: cover;
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     background: url("../img/photos/tracks.jpg") no-repeat center center fixed;
   }
 }
