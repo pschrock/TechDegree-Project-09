@@ -42,7 +42,11 @@ const quotes = [
 //     $('cite').text(quotes[i].author);
 //   })
 // }
-let windowWidthCalc = $(window).width();
+
+
+// matchMedia is in experimental stage. if no longer supported, calculate width and height
+const mediaQueryWidth = window.matchMedia('(min-width: 500px)');
+const mediaQueryOrientation = window.matchMedia('(orientation: landscape)');
 
 const controller = new ScrollMagic.Controller();
 
@@ -67,8 +71,8 @@ const scene2 = new ScrollMagic.Scene({
 .addTo(controller);
 
 //ScrollMagic - About Heading Pinned
-function aboutPinned(windowWidth) {
-  if (windowWidth >= 1024) {
+function aboutPinned() {
+  if (mediaQueryWidth.matches && mediaQueryOrientation.matches) {
     const scene3 = new ScrollMagic.Scene({
       triggerElement: ".about-wrap-left", // point of execution
       duration: $('.about .about-wrap-right').height() - 400, // pin element for the 'main' height
@@ -79,7 +83,7 @@ function aboutPinned(windowWidth) {
     .addTo(controller);
   }
 }
-aboutPinned(windowWidthCalc);
+aboutPinned();
 
 //ScrollMagic - Portfolio Heading Bounce
 const bouncePrtfolioImg = new TweenMax.from('.portfolio .port-wrap-left', 1, {scale: 0.25, opacity: 0, ease:Bounce.easeOut});
@@ -90,8 +94,8 @@ const scene4 = new ScrollMagic.Scene({
 .addTo(controller);
 
 //ScrollMagic - Portfolio Heading Pinned
-function portfolioPinned(windowWidth) {
-  if (windowWidth >= 1024) {
+function portfolioPinned() {
+  if (mediaQueryWidth.matches && mediaQueryOrientation.matches) {
     const scene5 = new ScrollMagic.Scene({
       triggerElement: ".port-wrap-left", // point of execution
       duration: $('.portfolio .port-wrap-right').height() - 400, // pin element for the 'main' height
@@ -102,7 +106,7 @@ function portfolioPinned(windowWidth) {
     .addTo(controller);
   }
 }
-portfolioPinned(windowWidthCalc);
+portfolioPinned();
 
 // ScrollMagic - Navigation to Pages
 $('.navbar li').click(function(e) {
@@ -138,18 +142,6 @@ for (i = 0; i<cards.length; i += 1){
     }
   });
 }
-
-
-// scroll Bind to page
-$(function() {
-  $.scrollify({
-     section : ".panel",
-     // sectionName : "Home",
-     easing: "easeOutExpo",
-     scrollSpeed: 1100,
-     touchScroll:true,
-  });
-});
 
 // send Message - validates fields are not empty
 $('#sendButton').click((e) => {

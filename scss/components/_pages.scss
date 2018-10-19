@@ -4,9 +4,24 @@
 }
 
 .about,
+.contact {
+  @include pageBG($color-background-five);
+}
+
+.about-wrap-right {
+  background: $color-background-four;
+  border-radius: 10px;
+  padding: 10%;
+  @include marginBottom;
+}
+
+.portfolio {
+  @include pageBG($color-background-four);
+}
+
+.about,
 .portfolio {
   @extend %section;
-  @extend %pagBackground;
   @extend %padding;
   @extend %sectionGrid;
   & h1 {
@@ -18,7 +33,7 @@
   ul,
   blockquote {
     font-size: 1em;
-    @media (min-width: 768px) {
+    @include mq-break ($brk-point) {
       font-size: 2em;
     }
   }
@@ -31,10 +46,6 @@
   cite {
     color: $color-font-secondary;
   }
-}
-
-.learning {
-  margin-bottom: 2em;
 }
 
 .portfolio li {
@@ -55,11 +66,24 @@ h3,
   padding-top: 2em;
 }
 
-.portfolio li:hover {
-  background: $color-background-tertiary;
-  border-radius: 10px;
-  & >div>div>.overlay {
-    top: 0;
+.portfolio li {
+  @media (min-width: 500px)
+  and (max-width: 999px) {
+    background: $color-background-tertiary;
+    border-radius: 10px;
+    margin-bottom: 1em;
+    & >div>div>.overlay {
+      top: 0;
+    }
+  }
+  &:hover {
+    @media (min-width: 1000px) {
+      background: $color-background-tertiary;
+      border-radius: 10px;
+      & >div>div>.overlay {
+        top: 0;
+      }
+    }
   }
 }
 
@@ -91,37 +115,41 @@ h3,
   }
 }
 
+.personal {
+  @include marginBottom;
+}
+
 .contact {
   @extend %section;
-  @extend %pagBackground;
   height: 100vh;
   & h1 {
     padding: calc(34px + 0.5em) 0 0;
     text-align: center;
-    @media (min-width: 768px) {
-      padding: calc(68px + 0.5em) 0;
+    @include mq-break (1000px) {
+      padding: calc(68px + 2em) 0 1em;
     }
   }
   &>.container>div>p {
     color: $color-font-secondary;
     text-align: center;
     margin-top: 2em;
-    @media (min-width: 768px) {
+    @include mq-break ($brk-point) {
       margin-top: 3em;
     }
   }
   & .contact-wrap {
     display: grid;
     grid-template-columns: 1fr;
-    @media (min-width: 768px) {
+    @include mq-break ($brk-point) {
       max-height: 100%;
       grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1em;
     }
   }
   & form {
     display: grid;
     grid-template-rows: 1fr 1fr 3fr;
-    @media (min-width: 768px) {
+    @include mq-break (1000px) {
       padding: 2em;
       max-height: 100%;
     }
@@ -139,17 +167,20 @@ h3,
   }
   & textarea {
     @extend %form-format;
-    height: 100%;
+    height: 4em;
+    @include mq-break (620px) {
+      height: 6em;
+    }
   }
   & .social {
-    @media (min-width: 768px) {
+    @include mq-break (1000px) {
       padding: 2em;
     }
     & ul {
       display: grid;
       grid-template-rows: auto;
       grid-gap: .25em;
-      @media (min-width: 768px) {
+      @include mq-break (1000px) {
         grid-gap: 1em;
       }
       & li {
@@ -158,15 +189,15 @@ h3,
         & p {
           color: $color-font-secondary;
           font-size: .65em;
-          @media (min-width: 768px) {
+          @include mq-break ($brk-point) {
             font-size: 1em;
           }
         }
         & img{
           display: block;
           margin-left: auto;
-          height: 2em;
-          @media (min-width: 768px) {
+          height: 3em;
+          @include mq-break (1000px) {
             height: 4em;
           }
         }

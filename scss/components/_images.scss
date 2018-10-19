@@ -1,18 +1,10 @@
 body {
-  @media screen and (max-height: 768px)
-    and (orientation: portrait)
-    and (-webkit-device-pixel-ratio: 4) {
-    background: url("../img/photos/tracks-min-portrait.jpg") no-repeat center center fixed;
-  }
-  @media screen and (min-width: 768px) and (min-width: 1024px)
-    and (orientation: landscape)
-    and (-webkit-device-pixel-ratio: 4) {
-    background: url("../img/photos/tracks-min-landscape.jpg") no-repeat center center fixed;
-  }
-  @media (min-width: 768px) {
+  @include mq-mobile (320px, 620px, 'portrait', '../img/photos/tracks-min-portrait.jpg');
+  @include mq-mobile (620px, 320px, 'landscape', '../img/photos/tracks-min-landscape.jpg');
+  @include mq-break (1024px) {
     background: url("../img/photos/tracks.jpg") no-repeat center center fixed;
-  }
-  background-size: cover;
+    background-size: cover;
+  };
 }
 
 .about-img,

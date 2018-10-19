@@ -1,10 +1,13 @@
 %section {
   width: 100%;
   & .container {
-    width: 80%;
-    @media (min-width: 768px) {
-      width: 60%;
-    }
+    width: 90%;
+    @media (min-width: 620px) {
+      width: 80%;
+    };
+    @media (min-width: 1000px) {
+      width: 1000px;
+    };
     margin: auto;
     & h1 {
       color: $color-font-secondary;
@@ -36,8 +39,4 @@
   border: 2px solid $color-background-four;
   border-radius: 5px;
   padding: 5px;
-}
-
-%pagBackground {
-  background: $color-background-four;
 }

@@ -9,14 +9,14 @@
   background: $color-background-primary;
   border-top: 5px solid $color-background-tertiary;
   border-bottom: 5px solid $color-background-tertiary;
-  @media (min-width: 768px){
+  @include mq-break ($brk-point) {
     padding: 2em;
   }
   & h1 {
     font-family: 'Fahkwang', sans-serif;
     font-size: 2em;
     margin: 0;
-    @media (min-width: 768px){
+    @include mq-break ($brk-point) {
       font-size: 5em;
     }
   }
@@ -24,7 +24,7 @@
     & p {
       font-size: 1em;
       margin: 0;
-      @media (min-width: 768px) {
+      @include mq-break ($brk-point) {
         font-size: 2em;
       }
     }
