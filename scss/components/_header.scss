@@ -3,30 +3,22 @@
 }
 
 .header-cont {
-  padding: 0.5em;
+  padding: 2em;
   color: $color-font-secondary;
   text-align: center;
   background: $color-background-primary;
   border-top: 5px solid $color-background-tertiary;
   border-bottom: 5px solid $color-background-tertiary;
-  @include mq-break ($brk-point) {
-    padding: 2em;
-  }
   & h1 {
     font-family: 'Fahkwang', sans-serif;
-    font-size: 2em;
+    font-size: 5em;
     margin: 0;
-    @include mq-break ($brk-point) {
-      font-size: 5em;
-    }
   }
   & .quote-wrap {
+    // opacity: 0;
     & p {
-      font-size: 1em;
+      font-size: 2em;
       margin: 0;
-      @include mq-break ($brk-point) {
-        font-size: 2em;
-      }
     }
   }
 

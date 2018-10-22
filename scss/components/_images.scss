@@ -1,10 +1,6 @@
 body {
-  @include mq-mobile (320px, 620px, 'portrait', '../img/photos/tracks-min-portrait.jpg');
-  @include mq-mobile (620px, 320px, 'landscape', '../img/photos/tracks-min-landscape.jpg');
-  @include mq-break (1024px) {
-    background: url("../img/photos/tracks.jpg") no-repeat center center fixed;
-    background-size: cover;
-  };
+  background: url("../img/photos/tracks.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 
 .about-img,
