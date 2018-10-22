@@ -1,11 +1,13 @@
-footer p {
+footer {
   position: absolute;
   width: 100%;
-  bottom: 20px;
-  padding: 1em;
-  margin: 0;
-  color: white;
-  text-align: center;
-  font-size: 1em;
-  background: $color-background-primary;
+  bottom: 0;
+  background: #263a50;
+  & p {
+    padding: 1em;
+    margin: 0;
+    color: white;
+    text-align: center;
+    font-size: 1em;
+  }
 }
